@@ -3,7 +3,6 @@
 
 <gazebo>
   <plugin name="control" filename="libgazebo_ros_control.so"/>
-  <robotNamespace>/scara_controller</robotNamespace>
 </gazebo>
 
 </robot>
