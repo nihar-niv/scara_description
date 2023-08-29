@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<robot name="scara" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="red_color" value="Gazebo/Red" />
+<xacro:property name="yellow_color" value="Gazebo/Yellow" />
+<xacro:property name="grey_color" value="Gazebo/DarkGrey" />
+
+<gazebo reference="base_link">
+  <material>${red_color}</material>
+</gazebo>
+
+<gazebo reference="shoulder_link_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="elbow_link_1">
+  <material>${red_color}</material>
+</gazebo>
+
+<gazebo reference="wrist_link_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="ee_link_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+<gazebo reference="motor_link_1">
+  <material>${yellow_color}</material>
+</gazebo>
+
+<gazebo reference="chuck_link_1">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="drill_link_1">
+  <material>${grey_color}</material>
+</gazebo>
+
+</robot>

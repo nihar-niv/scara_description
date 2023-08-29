@@ -1,0 +1,19 @@
+scara_controller:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  shoulder_joint_position_controller:
+    type: position_controllers/JointTrajectoryController
+    joint: shoulder_joint
+  elbow_joint_position_controller:
+    type: position_controllers/JointTrajectoryController
+    joint: elbow_joint
+  wrist_joint_position_controller:
+    type: position_controllers/JointTrajectoryController
+    joint: wrist_joint
+  chuck_joint_position_controller:
+    type: position_controllers/JointTrajectoryController
+    joint: chuck_joint
