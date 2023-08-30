@@ -4,9 +4,9 @@
 <xacro:include filename="$(find scara_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find scara_description)/urdf/scara.trans" />
 
-<xacro:include filename="$(find scara_description)/gazebo/scara_materials.gazebo" />
-<xacro:include filename="$(find scara_description)/gazebo/scara_physics.gazebo" />
-<xacro:include filename="$(find scara_description)/gazebo/scara_plugins.gazebo" />
+<xacro:include filename="$(find scara_description)/urdf/gazebo/scara_plugins.gazebo" />
+<xacro:include filename="$(find scara_description)/urdf/gazebo/scara_materials.gazebo" />
+<xacro:include filename="$(find scara_description)/urdf/gazebo/scara_physics.gazebo" />
 
 <link name="world"/>
   <joint name="base_joint" type="fixed">

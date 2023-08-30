@@ -1,0 +1,22 @@
+<launch>
+
+<param name="robot_description" command="$(find xacro)/xacro $(find scara_description)/urdf/scara.xacro"/>
+
+<rosparam file="$(find scara_description)/config/controller.yaml" command="load"/>
+
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model scara"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="scara_controller" args="shoulder_joint_position_controller elbow_joint_position_controller wrist_joint_position_controller chuck_joint_position_controller joint_state_controller "/>
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/scara/joint_states"/>
+</node>
+
+</launch>

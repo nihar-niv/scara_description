@@ -1,10 +1,25 @@
 <launch>
 
-<rosparam file="$(find scara_description)/launch/controller.yaml" command="load"/>
+<rosparam file="$(find scara_description)/config/controller.yaml" command="load"/>
 
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="scara" args="shoulder_joint_position_controller elbow_joint_position_controller wrist_joint_position_controller chuck_joint_position_controller joint_state_controller "/>
+<node name="controller_spawner" 
+      pkg="controller_manager" 
+      type="spawner" 
+      respawn="false" 
+      output="screen" 
+      ns="/scara_description" 
+      args="shoulder_joint_position_controller 
+            elbow_joint_position_controller 
+            wrist_joint_position_controller 
+            chuck_joint_position_controller 
+            joint_state_controller"/>
 
-<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+<node name="robot_state_publisher" 
+      pkg="robot_state_publisher" 
+      type="robot_state_publisher" 
+      respawn="false" 
+      output="screen">
+      
   <remap from="/joint_states" to="/scara/joint_states"/>
 </node>
 
