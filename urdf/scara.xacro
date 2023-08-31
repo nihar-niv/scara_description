@@ -204,7 +204,7 @@
   <parent link="elbow_link_1"/>
   <child link="wrist_link_1"/>
   <axis xyz="-0.0 0.0 -1.0"/>
-  <limit upper="0.18" lower="0" effort="100" velocity="100"/>
+  <limit upper="0.18" lower="0" effort="1000" velocity="100"/>
 </joint>
 
 <joint name="Rigid 19" type="fixed">
