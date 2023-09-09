@@ -188,15 +188,15 @@
   <parent link="base_link"/>
   <child link="shoulder_link_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="6.283185" lower="0.0" effort="100" velocity="100"/>
+  <limit upper="6.283185" lower="0.0" effort="100" velocity="1.0"/>
 </joint>
 
 <joint name="elbow_joint" type="revolute">
   <origin xyz="0.25 0.0 0.0" rpy="0 0 0"/>
   <parent link="shoulder_link_1"/>
   <child link="elbow_link_1"/>
-  <axis xyz="0.0 -0.0 1.0"/>
-  <limit upper="2.70526" lower="-2.70526" effort="100" velocity="100"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="2.70526" lower="-2.70526" effort="100" velocity="1.0"/>
 </joint>
 
 <joint name="wrist_joint" type="prismatic">
@@ -204,7 +204,8 @@
   <parent link="elbow_link_1"/>
   <child link="wrist_link_1"/>
   <axis xyz="-0.0 0.0 -1.0"/>
-  <limit upper="0.18" lower="0" effort="1000" velocity="100"/>
+  <dynamics damping="10.0" friction="44.0"/>
+  <limit upper="0.18" lower="0" effort="1000" velocity="0.05"/>
 </joint>
 
 <joint name="Rigid 19" type="fixed">
@@ -219,7 +220,7 @@
   <child link="motor_link_1"/>
 </joint>
 
-<joint name="chuck_joint" type="revolute">
+<joint name="chuck_joint" type="continuous">
   <origin xyz="0.0 0.0 -0.018" rpy="0 0 0"/>
   <parent link="motor_link_1"/>
   <child link="chuck_link_1"/>

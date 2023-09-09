@@ -2,6 +2,7 @@
 <robot name="scara" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 <xacro:property name="standard_friction" value="0.2" />
+<xacro:property name="increased_friction" value="100.0" />
 
 <gazebo reference="base_link">
   <mu1>${standard_friction}</mu1>

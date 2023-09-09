@@ -8,17 +8,17 @@ scara_description:
   shoulder_joint_position_controller:
     type: effort_controllers/JointPositionController
     joint: shoulder_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 35.0}
 
   elbow_joint_position_controller:
     type: effort_controllers/JointPositionController
     joint: elbow_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100.0, i: 0.01, d: 25.0}
 
   wrist_joint_position_controller:
     type: effort_controllers/JointPositionController
     joint: wrist_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 100000.0, i: 4000.0, d: 1000.0}
     
   chuck_joint_position_controller:
     type: effort_controllers/JointPositionController
